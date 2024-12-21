@@ -1,0 +1,13 @@
+{
+    "name":"io/iocar",
+    "autoload": {
+        "psr-4": {
+            "App\\":"app"
+        }
+    },
+    "require": {
+        "william-costa/dot-env": "^0.1.0",
+        "william-costa/database-manager": "^0.1.0",
+        "xamin/handlebars.php": "^0.10.4"
+    }
+}

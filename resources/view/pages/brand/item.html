@@ -1,0 +1,30 @@
+<tr>
+<!-- Exibe a logo da marca -->
+<td>
+    <img 
+        src="{{URL}}/{{logo}}" 
+        alt="Logo" 
+        class="rounded-circle" 
+        style="width: 30px; height: 30px; object-fit: cover;" 
+        onerror="this.onerror=null; this.src='{{URL}}/uploads/logos/generica.jpg';"
+    >
+</td>
+<td>{{name}}</td>
+<td>
+    <!-- Botão Detalhes -->
+    <a href="{{URL}}/marcadetails?id={{id}}" class="btn btn-info btn-sm">
+      <i class="fas fa-info-circle"></i> Detalhes
+    </a>
+    <!-- Botão Editar -->
+    <a href="{{URL}}/editmarca?edit={{id}}" class="btn btn-warning btn-sm">
+      <i class="fas fa-edit"></i> Editar
+    </a>
+    <!-- Botão Excluir -->
+    <a href="{{URL}}/marca/delete?delete={{id}}" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir esta marca?')">
+      <i class="fas fa-trash-alt"></i> Excluir
+    </a>
+
+  </td>
+</tr>
+
+

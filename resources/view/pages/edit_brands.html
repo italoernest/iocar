@@ -1,0 +1,85 @@
+<h1 class="m-0">Marca de Carros</h1>
+</div><!-- /.col -->
+<div class="col-sm-6">
+  <ol class="breadcrumb float-sm-right">
+    <li class="breadcrumb-item"><a href="{{URL}}">Home</a></li>
+    <li class="breadcrumb-item active">Editar Marca de Veículo</li>
+  </ol>
+</div><!-- /.col -->
+</div><!-- /.row -->
+</div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+</section>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <!-- Default box -->
+    <div class="card card-default">
+      <div class="card-header d-flex justify-content-between">
+        <h3 class="card-title">Editar Marca de Veículo</h3>
+
+        <a href="{{URL}}/marca" class="btn btn-info btn-icon ml-auto">
+          <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+      </div>
+  <div class="card-body">
+    <!-- Exibe a mensagem de sucesso se existir -->
+    {{#if successMessage}}
+    <div class="alert alert-success" role="alert">
+        {{successMessage}}
+    </div>
+    {{/if}}
+
+    <!-- Exibe a mensagem de erro se existir -->
+    {{#if errorMessage}}
+    <div class="alert alert-danger" role="alert">
+        {{errorMessage}}
+    </div>
+    {{/if}}
+
+    <form method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- Nome da Marca -->
+          <div class="form-group">
+            <label for="name">Nome da Marca</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{name}}" placeholder="Atualize o nome da marca" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <!-- Imagem da Marca -->
+          <div class="form-group">
+            
+            <label for="logo">Nova Imagem da Marca (Opcional)</label>
+            <input type="file" class="form-control" id="logo" name="logo" accept="image/*">
+
+            <label for="logo">Imagem Atual</label>
+            <div>
+              <img 
+              src="{{URL}}/{{logo}}" 
+              alt="Logo da Marca" 
+              class="img-thumbnail" 
+              style="width: 150px;" 
+              onerror="this.onerror=null; this.src='{{URL}}/uploads/logos/generica.jpg';">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Botões de Ação -->
+      <div class="row">
+        <div class="col-12">
+          <button type="submit" class="btn btn-success">Salvar Alterações</button>
+          <a href="{{URL}}/marca" class="btn btn-danger">Cancelar</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
