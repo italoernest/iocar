@@ -204,10 +204,11 @@ class Router{
                 $args[$name] = $route['variables'][$name] ?? '';
                 
             }
+
             //RETORNA A EXECUÇÃO DA FILA DE MIDDLEWARES
-            //return (new MiddlewareQueue($route['middleware'], $route['controller'],$args))->next($this->request);
+            return (new MiddlewareQueue($route['middlewares'], $route['controller'],$args))->next($this->request);
             //RETORNA A EXECUÇÃO DA FUNÇÃO
-            return call_user_func_array($route['controller'],$args);
+            //return call_user_func_array($route['controller'],$args);
         } catch (Exception $e) {
             return new Response($e->getCode(),$e->getMessage());
         }
