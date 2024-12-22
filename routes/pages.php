@@ -87,3 +87,5 @@ $obRouter->get('/marcadetails', [
         return new Response(200, Pages\Brand::getBrandDetails($request, $id));
     }
 ]);
+
+
