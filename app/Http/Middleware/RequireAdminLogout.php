@@ -17,9 +17,9 @@ class RequireAdminLogout{
         //VERIFICA SE O USUÁRIO ESTÁ LOGADO
         if(SessionAdminLogin::isLogged()){
             //REDIRECIONA O USUÁRIO PARA A  HOME DO ADMIN
-            $request->getRouter()->redirect('/admin');
+            //$request->getRouter()->redirect('/admin');
             //REDIRECIONA O USUÁRIO PARA A TELA PRINCIPAL
-            //$request->getRouter()->redirect('/'); //Habilitar essa para cair na Dashboard
+            $request->getRouter()->redirect('/'); //Habilitar essa para cair na Dashboard
         }
 
         //CONTINUA A EXECUÇÃO

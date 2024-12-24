@@ -5,6 +5,9 @@ use \App\Controller\Pages;
 
 // ROTA SOBRE
 $obRouter -> get('/', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function(){
         return new Response(200, Pages\Home::getHome());
     }
@@ -12,6 +15,9 @@ $obRouter -> get('/', [
 
 // ROTA SOBRE
 $obRouter -> get('/sobre', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function(){
         return new Response(200, Pages\About::getAbout());
     }
@@ -19,6 +25,9 @@ $obRouter -> get('/sobre', [
 
 // ROTA NOVOS VEICULOS
 $obRouter -> get('/marca', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function(){
         return new Response(200, Pages\Brand::getBrands());
     }
@@ -26,6 +35,9 @@ $obRouter -> get('/marca', [
 
 // ROTA NOVOS VEICULOS
 $obRouter -> get('/addmarca', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function(){
         return new Response(200, Pages\Brand::postBrands());
     }
@@ -33,6 +45,9 @@ $obRouter -> get('/addmarca', [
 
 // ROTA NOVOS VEICULOS
 $obRouter -> post('/addmarca', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function($request){
         //RETORNANDO O CONTEÚDO PARA O FORMULARIO ADDBRANDS
         return new Response(200, Pages\Brand::inserirBrand($request));
@@ -41,6 +56,9 @@ $obRouter -> post('/addmarca', [
 
 // ROTA PARA EXIBIR FORMULÁRIO DE EDIÇÃO
 $obRouter->get('/editmarca', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function($request) {
         $queryParams = $request->getQueryParams();
         $id = $queryParams['edit'] ?? null;
@@ -55,6 +73,9 @@ $obRouter->get('/editmarca', [
 
 // ROTA PARA PROCESSAR A EDIÇÃO
 $obRouter->post('/editmarca', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function($request) {
         $queryParams = $request->getQueryParams();
         $id = $queryParams['edit'] ?? null;
@@ -69,6 +90,9 @@ $obRouter->post('/editmarca', [
 
 // ROTA PARA EXCLUIR UMA MARCA
 $obRouter->get('/marca/delete', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function($request) {
         return new Response(200, Pages\Brand::deleteBrand($request));
     }
@@ -76,6 +100,9 @@ $obRouter->get('/marca/delete', [
 
 // ROTA PARA DETALHES DA MARCA
 $obRouter->get('/marcadetails', [
+    'middlewares' => [
+        'required-admin-login'
+    ],
     function($request) {
         $queryParams = $request->getQueryParams();
         $id = $queryParams['id'] ?? null;
