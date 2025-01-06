@@ -19,6 +19,6 @@ class Home extends Page{
             'name' => $obOrganization->name
             //RETORNA A VIEW DA PAGINA 
         ]);
-        return parent::getPage("IO - CAR - HOME", $content);
+        return parent::getPage("IO - CAR - HOME", $content, 'dashboard');
     }
 }
